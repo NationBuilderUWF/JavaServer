@@ -2,9 +2,15 @@ package com.company;
 
 import WebUtilities.LoginReq;
 import WebUtilities.LoginRes;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 
 import java.io.*;
 import java.net.*;
+
+import static com.mongodb.client.model.Filters.eq;
 
 
 public class Main {
@@ -49,23 +55,33 @@ public class Main {
 
     public void takeNewConnection(Socket socket) {
 
+         final Socket _socket=socket;
+
+
+
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    ObjectInputStream is = new ObjectInputStream(socket.getInputStream());
-                    ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
+                    ObjectInputStream is = new ObjectInputStream(_socket.getInputStream());
+                    ObjectOutputStream os = new ObjectOutputStream(_socket.getOutputStream());
+                    MongoClient mongoClient = new MongoClient( "localhost" );
+                    MongoDatabase database = mongoClient.getDatabase("CF");
 
                     Object o = is.readObject();
 
                     if(o instanceof LoginReq){
+                        MongoCollection<Document> collection = database.getCollection("login");
+                        System.out.println("Loggin IN!");
+                        Document _doc = collection.find(eq("username",((LoginReq) o).username)).first();
                         LoginRes response = new LoginRes();
-                        System.out.println("  ");
+
+                        System.out.println("  "+_doc.toJson());
                         response.admin = true;
                         response.success = true;
                         os.writeObject(response);
                     }
-                    
+
 
 
                 } catch (IOException e) {
