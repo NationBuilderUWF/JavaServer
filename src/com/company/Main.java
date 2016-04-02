@@ -1,5 +1,6 @@
 package com.company;
 
+import WebUtilities.LoginReq;
 import WebUtilities.LoginRes;
 
 import java.io.*;
@@ -46,25 +47,36 @@ public class Main {
         // write your code here
     }
 
-    public boolean takeNewConnection(Socket socket) {
-        try {
-            ObjectInputStream is = new ObjectInputStream(socket.getInputStream());
-            ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
-            while (true) {
+    public void takeNewConnection(Socket socket) {
 
-                LoginRes response = new LoginRes();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    ObjectInputStream is = new ObjectInputStream(socket.getInputStream());
+                    ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
+
+                    Object o = is.readObject();
+
+                    if(o instanceof LoginReq){
+                        LoginRes response = new LoginRes();
+                        System.out.println("  ");
+                        response.admin = true;
+                        response.success = true;
+                        os.writeObject(response);
+                    }
+                    
 
 
-                System.out.println("  ");
-                response.admin = true;
-                response.success = true;
-                os.writeObject(response);
-                return true;
+                } catch (IOException e) {
+                    e.printStackTrace();
+
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
+        }).start();
+
     }
 
 }
