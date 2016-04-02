@@ -34,6 +34,7 @@ public class Main {
         }
 
         try {
+            System.out.println("making server");
             while(true) new Main().takeNewConnection( providerSocket.accept());
 //            is = new ObjectInputStream(clientSocket.getInputStream());
 //            os = new ObjectOutputStream(clientSocket.getOutputStream());
@@ -55,7 +56,7 @@ public class Main {
         // write your code here
     }
 
-    public void takeNewConnection(Socket socket) {
+    public void takeNewConnection(final Socket socket) {
 
          final Socket _socket=socket;
 
@@ -65,60 +66,31 @@ public class Main {
             @Override
             public void run() {
 
+                System.out.println("connection made, determining action");
 
                 try {
                     ObjectInputStream is = new ObjectInputStream(_socket.getInputStream());
-                    ObjectOutputStream os = new ObjectOutputStream(_socket.getOutputStream());
+                    System.out.println("made input stream");
 
-                    MongoClient mongoClient = new MongoClient( "localhost" );
-                    MongoDatabase database = mongoClient.getDatabase("CF");
+                   ObjectOutputStream os = new ObjectOutputStream(_socket.getOutputStream());
+
+//                    MongoClient mongoClient = new MongoClient("localhost");
+//                    MongoDatabase database = mongoClient.getDatabase("CF");
 
                     Object o = is.readObject();
+                    System.out.println("made object");
 
-                    if(o instanceof LoginReq){
-                        MongoCollection<Document> collection = database.getCollection("login");
-                        System.out.println("Loggin IN!");
-                        Document _doc = collection.find(eq("username",((LoginReq) o).username)).first();
-
-                        Login login = new Gson().fromJson(_doc.toJson(),Login.class);
-
-                        System.out.println(login.password+":   ==??  :"+((LoginReq) o).password);
-
-                        if(login.password.equals(((LoginReq) o).password)){
-                            System.out.println("entered the if !!");
-                            LoginRes response = new LoginRes();
-
-                            //System.out.println(new Gson().fromJson(_doc.toJson(),Login.class));
-                            response.admin = login.admin;
-                            response.success = true;
-                            System.out.println("Sending Login Success");
-                            os.writeObject(response);
-                        }
-
-
-
+                    if (o instanceof LoginReq) {
+                        System.out.println("using helper");
+                        LoginHelper.login(socket,o,os);
                     }
-
-
-
-                } catch (IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
-
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                } catch(NullPointerException e){
-                    System.out.println("BAD LOGIN");
-                    LoginRes response = new LoginRes();
-                    response.admin = false;
-                    response.success = false;
-                    try {
-                        new ObjectOutputStream(_socket.getOutputStream()).writeObject(response);
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
                 }
+
+
             }
-        }).start();
+            }).start();
 
     }
 
