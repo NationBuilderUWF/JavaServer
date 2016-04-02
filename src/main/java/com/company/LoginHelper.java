@@ -41,14 +41,19 @@ public class LoginHelper {
                 Login login = new Gson().fromJson(_doc.toJson(), Login.class);
 
                 System.out.println(login.password + ":   ==??  :" + ((LoginReq) o).password);
+                LoginRes response = new LoginRes();
 
                 if (login.password.equals(((LoginReq) o).password)) {
                     System.out.println("entered the if !!");
-                    LoginRes response = new LoginRes();
+
                     //System.out.println(new Gson().fromJson(_doc.toJson(),Login.class));
                     response.admin = login.admin;
                     response.success = true;
                     System.out.println("Sending Login Success");
+                    os.writeObject(response);
+                }
+                else{
+                    response.success = false;
                     os.writeObject(response);
                 }
 
