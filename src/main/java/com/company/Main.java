@@ -7,6 +7,7 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
+import sun.rmi.runtime.Log;
 
 import java.io.*;
 import java.net.*;
@@ -79,14 +80,23 @@ public class Main {
                         System.out.println("Loggin IN!");
                         Document _doc = collection.find(eq("username",((LoginReq) o).username)).first();
 
+                        Login login = new Gson().fromJson(_doc.toJson(),Login.class);
+
+                        System.out.println(login.password+":   ==??  :"+((LoginReq) o).password);
+
+                        if(login.password.equals(((LoginReq) o).password)){
+                            System.out.println("entered the if !!");
+                            LoginRes response = new LoginRes();
+
+                            //System.out.println(new Gson().fromJson(_doc.toJson(),Login.class));
+                            response.admin = login.admin;
+                            response.success = true;
+                            System.out.println("Sending Login Success");
+                            os.writeObject(response);
+                        }
 
 
-                        LoginRes response = new LoginRes();
 
-                        System.out.println(new Gson().fromJson(_doc.toJson(),Login.class));
-                        response.admin = true;
-                        response.success = true;
-                        os.writeObject(response);
                     }
 
 
