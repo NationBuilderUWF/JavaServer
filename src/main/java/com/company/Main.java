@@ -76,7 +76,7 @@ public class Main {
                         Document _doc = collection.find(eq("username",((LoginReq) o).username)).first();
                         LoginRes response = new LoginRes();
 
-                        System.out.println("  "+_doc.toJson());
+                        System.out.println("  "+_doc.toJson().);
                         response.admin = true;
                         response.success = true;
                         os.writeObject(response);
