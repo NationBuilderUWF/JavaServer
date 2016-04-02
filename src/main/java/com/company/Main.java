@@ -2,6 +2,7 @@ package com.company;
 
 import WebUtilities.LoginReq;
 import WebUtilities.LoginRes;
+import com.google.gson.Gson;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -62,9 +63,12 @@ public class Main {
         new Thread(new Runnable() {
             @Override
             public void run() {
+
+
                 try {
                     ObjectInputStream is = new ObjectInputStream(_socket.getInputStream());
                     ObjectOutputStream os = new ObjectOutputStream(_socket.getOutputStream());
+
                     MongoClient mongoClient = new MongoClient( "localhost" );
                     MongoDatabase database = mongoClient.getDatabase("CF");
 
@@ -74,9 +78,12 @@ public class Main {
                         MongoCollection<Document> collection = database.getCollection("login");
                         System.out.println("Loggin IN!");
                         Document _doc = collection.find(eq("username",((LoginReq) o).username)).first();
+
+
+
                         LoginRes response = new LoginRes();
 
-                        System.out.println("  "+_doc.toJson().);
+                        System.out.println(new Gson().fromJson(_doc.toJson(),Login.class));
                         response.admin = true;
                         response.success = true;
                         os.writeObject(response);
@@ -89,6 +96,16 @@ public class Main {
 
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
+                } catch(NullPointerException e){
+                    System.out.println("BAD LOGIN");
+                    LoginRes response = new LoginRes();
+                    response.admin = false;
+                    response.success = false;
+                    try {
+                        new ObjectOutputStream(_socket.getOutputStream()).writeObject(response);
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
                 }
             }
         }).start();
