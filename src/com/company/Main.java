@@ -1,32 +1,58 @@
 package com.company;
-import java.sql.*;
+import WebUtilities.LoginRes;
+
+import java.io.*;
+import java.net.*;
 
 
 
 public class Main {
 
+
+
+
     public static void main(String[] args) {
+
+        ServerSocket providerSocket = null;
+        Socket clientSocket;
+        ObjectInputStream is;
+        ObjectOutputStream os;
+        String message;
+        LoginRes response = new LoginRes();
+
         try
         {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            String connectionUrl = "jdbc:sqlserver://localhost:797";
-            Connection con = null;
-            con = DriverManager.getConnection(connectionUrl,"the_user","the_password");
-            System.out.println("Connected to Server");
-
-            
-
+            providerSocket = new ServerSocket(3000);
         }
-        catch(ClassNotFoundException e)
+        catch (IOException e)
         {
-            System.out.print("Didn't connect to server");
+            System.out.println(e);
         }
-        catch (SQLException e)
+
+        try
         {
-            System.out.print("SQL problem");
+            clientSocket = providerSocket.accept();
+            is = new ObjectInputStream(clientSocket.getInputStream());
+            os = new ObjectOutputStream(clientSocket.getOutputStream());
+            while(true)
+            {
+
+                message = is.readObject().toString();
+                System.out.println(message);
+                response.admin = true;
+                response.success = true;
+                os.writeObject(response);
+            }
+
+
+        }
+        catch (IOException e) {
+            System.out.println(e);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
 
 
-	// write your code here
+        // write your code here
     }
 }
