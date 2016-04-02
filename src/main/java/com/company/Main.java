@@ -1,18 +1,11 @@
 package com.company;
 
+import WebUtilities.GetMapReq;
 import WebUtilities.LoginReq;
 import WebUtilities.LoginRes;
-import com.google.gson.Gson;
-import com.mongodb.MongoClient;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-import org.bson.Document;
-import sun.rmi.runtime.Log;
 
 import java.io.*;
 import java.net.*;
-
-import static com.mongodb.client.model.Filters.eq;
 
 
 public class Main {
@@ -83,6 +76,10 @@ public class Main {
                     if (o instanceof LoginReq) {
                         System.out.println("using helper");
                         LoginHelper.login(socket,o,os);
+                    } else if(o instanceof GetMapReq){
+                        System.out.println("Using GetMapHelper");
+                        MapHelper.getMapReq(socket,o,os);
+
                     }
                 } catch (Exception e) {
                     e.printStackTrace();

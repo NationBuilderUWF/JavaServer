@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+
+<GridPane alignment="CENTER" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MapRender.MapRenderController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane fx:id="mapPane" prefHeight="576.0" prefWidth="528.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d2231a" height="48.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="48.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="96.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="144.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="192.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="240.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="288.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="336.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="384.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="432.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="480.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutY="48.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="48.0" layoutY="48.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="96.0" layoutY="48.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="144.0" layoutY="48.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="192.0" layoutY="48.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="240.0" layoutY="48.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="288.0" layoutY="48.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="336.0" layoutY="48.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="384.0" layoutY="48.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="432.0" layoutY="48.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="480.0" layoutY="48.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutY="96.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="48.0" layoutY="96.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="96.0" layoutY="96.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="144.0" layoutY="96.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="192.0" layoutY="96.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="240.0" layoutY="96.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="288.0" layoutY="96.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="336.0" layoutY="96.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="384.0" layoutY="96.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="432.0" layoutY="96.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="480.0" layoutY="96.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutY="144.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="48.0" layoutY="144.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="96.0" layoutY="144.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="144.0" layoutY="144.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="192.0" layoutY="144.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="240.0" layoutY="144.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="288.0" layoutY="144.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="336.0" layoutY="144.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="384.0" layoutY="144.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="432.0" layoutY="144.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="480.0" layoutY="144.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutY="192.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="48.0" layoutY="192.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="96.0" layoutY="192.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="144.0" layoutY="192.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="192.0" layoutY="192.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="240.0" layoutY="192.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="288.0" layoutY="192.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="336.0" layoutY="192.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="384.0" layoutY="192.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="432.0" layoutY="192.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="480.0" layoutY="192.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutY="240.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="48.0" layoutY="240.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="96.0" layoutY="240.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="144.0" layoutY="240.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="192.0" layoutY="240.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="240.0" layoutY="240.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="288.0" layoutY="240.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="336.0" layoutY="240.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="384.0" layoutY="240.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="432.0" layoutY="240.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="480.0" layoutY="240.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutY="288.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="48.0" layoutY="288.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="96.0" layoutY="288.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="144.0" layoutY="288.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="192.0" layoutY="288.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="240.0" layoutY="288.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="288.0" layoutY="288.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="336.0" layoutY="288.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="384.0" layoutY="288.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="432.0" layoutY="288.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="480.0" layoutY="288.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutY="336.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="48.0" layoutY="336.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="96.0" layoutY="336.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="144.0" layoutY="336.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="192.0" layoutY="336.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="240.0" layoutY="336.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="288.0" layoutY="336.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="336.0" layoutY="336.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="384.0" layoutY="336.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="432.0" layoutY="336.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="480.0" layoutY="336.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutY="384.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="48.0" layoutY="384.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="96.0" layoutY="384.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="144.0" layoutY="384.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="192.0" layoutY="384.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="240.0" layoutY="384.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="288.0" layoutY="384.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="336.0" layoutY="384.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="384.0" layoutY="384.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="432.0" layoutY="384.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="480.0" layoutY="384.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutY="432.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="48.0" layoutY="432.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="96.0" layoutY="432.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="144.0" layoutY="432.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="192.0" layoutY="432.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="240.0" layoutY="432.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="288.0" layoutY="432.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="336.0" layoutY="432.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="384.0" layoutY="432.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="432.0" layoutY="432.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="480.0" layoutY="432.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutY="480.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="48.0" layoutY="480.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="96.0" layoutY="480.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="144.0" layoutY="480.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="192.0" layoutY="480.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="240.0" layoutY="480.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="288.0" layoutY="480.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="336.0" layoutY="480.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="384.0" layoutY="480.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="432.0" layoutY="480.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="480.0" layoutY="480.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6ad11b" height="48.0" layoutY="528.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="48.0" layoutY="528.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="96.0" layoutY="528.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="144.0" layoutY="528.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="192.0" layoutY="528.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="240.0" layoutY="528.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d4d3d3" height="48.0" layoutX="288.0" layoutY="528.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="336.0" layoutY="528.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="384.0" layoutY="528.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="432.0" layoutY="528.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffa35c" height="48.0" layoutX="480.0" layoutY="528.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#020202" height="8.0" layoutY="283.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="97.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#020202" height="8.0" layoutX="431.0" layoutY="284.0" onMouseClicked="#getCoords" stroke="BLACK" strokeType="INSIDE" width="97.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
