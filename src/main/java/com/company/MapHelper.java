@@ -26,10 +26,13 @@ public class MapHelper {
         System.out.println("Get Map Req!");
         Document gameMap = collection.find().first();
         System.out.println(gameMap);
-        GetMapRes object = new Gson().fromJson(gameMap.toJson(), GetMapRes.class);
+        SetMapReq object = new Gson().fromJson((String) collection.find().first().get("Map?"),SetMapReq.class);
+        GetMapRes gmr = new GetMapRes();
+        gmr.maps=object.maps;
+        gmr.banks=object.banks;
         System.out.println(object);
         try {
-            os.writeObject(object);
+            os.writeObject(gmr);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -48,6 +51,8 @@ public class MapHelper {
         collection.insertOne(new Document("Map?",newMapJSON));
 
         System.out.println("Hello:: "+new Gson().fromJson((String) collection.find().first().get("Map?"),SetMapReq.class).banks);
+
+
 
         //collection.updateOne(eq("_id",((SetMapReq) o).map._id),new Document("$set",new Document("tiles",newMap.tiles)));
     }
