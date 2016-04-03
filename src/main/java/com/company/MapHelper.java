@@ -7,6 +7,8 @@ import com.google.gson.Gson;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.util.JSON;
+import org.bson.BSONObject;
 import org.bson.Document;
 
 import java.io.IOException;
@@ -37,22 +39,13 @@ public class MapHelper {
         MongoClient mongoClient = new MongoClient("localhost");
         MongoDatabase database = mongoClient.getDatabase("CF");
         MongoCollection<Document> collection = database.getCollection("map");
-
-
-
-
-
-
         System.out.println("Set Map Req");
         System.out.println(o);
         SetMapReq smr=(SetMapReq)o;
         System.out.println(smr.maps);
-//        String newMapJSON = new Gson().toJson(newMap).toString();
-//        BSONObject dbObject = (BSONObject) JSON.parse(newMapJSON);
-        Document doc = new Document("tiles",smr.maps).append("banks",smr.banks);
-        System.out.println(doc);
-        collection.insertOne(doc);
+        String newMapJSON = new Gson().toJson(smr).toString();
+        //Document doc = new Document("tiles",smr.maps).append("banks",smr.banks);
+        collection.insertOne(new Document("Map?",newMapJSON));
         //collection.updateOne(eq("_id",((SetMapReq) o).map._id),new Document("$set",new Document("tiles",newMap.tiles)));
-
     }
 }
