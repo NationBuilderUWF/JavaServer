@@ -1,6 +1,5 @@
 package MapRender;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import javafx.event.Event;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
@@ -48,19 +47,19 @@ public class MapRenderController {
         for(int x = 0; x < 11; x++){
             for(int y = 0; x < 12; x++){
                 if(array[x][y] == 1) {
-                    int temp = (x * 11) + y;
+                    int temp = (x * 12) + y;
                     Rectangle rect = (Rectangle) mapPane.getChildren().get(temp);
                     rect.fillProperty().setValue(Color.web("#d2231a"));
                 }else if(array[x][y] == 2){
-                    int temp = (x * 11) + y;
+                    int temp = (x * 12) + y;
                     Rectangle rect = (Rectangle) mapPane.getChildren().get(temp);
                     rect.fillProperty().setValue(Color.DODGERBLUE);
                 }else if(array[x][y] == 3){
-                    int temp = (x * 11) + y;
+                    int temp = (x * 12) + y;
                     Rectangle rect = (Rectangle) mapPane.getChildren().get(temp);
                     rect.fillProperty().setValue(Color.web("#6ad11b"));
                 }else if(array[x][y] == 4){
-                    int temp = (x * 11) + y;
+                    int temp = (x * 12) + y;
                     Rectangle rect = (Rectangle) mapPane.getChildren().get(temp);
                     rect.fillProperty().setValue(Color.web("#ffa35c"));
                 }

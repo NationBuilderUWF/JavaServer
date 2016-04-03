@@ -7,8 +7,6 @@ import com.google.gson.Gson;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.util.JSON;
-import org.bson.BSONObject;
 import org.bson.Document;
 
 import java.io.IOException;
@@ -19,6 +17,7 @@ import java.net.Socket;
  * Created by bjc90_000 on 4/2/2016.
  */
 public class MapHelper {
+
     public static void getMapReq(Socket socket, Object o, ObjectOutputStream os){
         MongoClient mongoClient = new MongoClient("localhost");
         MongoDatabase database = mongoClient.getDatabase("CF");
@@ -26,6 +25,8 @@ public class MapHelper {
         System.out.println("Get Map Req!");
         Document gameMap = collection.find().first();
         System.out.println(gameMap);
+        //Object db =collection.find(new Document("$natural","-1")).first();
+
         SetMapReq object = new Gson().fromJson((String) collection.find().first().get("Map?"),SetMapReq.class);
         GetMapRes gmr = new GetMapRes();
         gmr.maps=object.maps;

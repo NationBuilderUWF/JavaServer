@@ -1,6 +1,8 @@
 package Map;
 
-public class Nation {
+import java.io.Serializable;
+
+public class Nation implements Serializable{
 
     private int ID;
     private int resources;

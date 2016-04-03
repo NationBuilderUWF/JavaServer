@@ -161,10 +161,10 @@ public class Tile implements Serializable{
     }
 
     public Tile(){
-        this.owner = null;
+        this.owner = new Nation(0,0,false);
         this.darkFlag = false;
         this.defendFlag = false;
-        this.attacker = null;
+        this.attacker = new Nation(0,0,false);
     }
 
     public Tile(Nation owner, boolean darkFlag, boolean defendFlag, Nation attacker){
