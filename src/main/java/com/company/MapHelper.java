@@ -46,6 +46,9 @@ public class MapHelper {
         String newMapJSON = new Gson().toJson(smr).toString();
         //Document doc = new Document("tiles",smr.maps).append("banks",smr.banks);
         collection.insertOne(new Document("Map?",newMapJSON));
+
+        System.out.println("Hello:: "+new Gson().fromJson((String) collection.find().first().get("Map?"),SetMapReq.class).banks);
+
         //collection.updateOne(eq("_id",((SetMapReq) o).map._id),new Document("$set",new Document("tiles",newMap.tiles)));
     }
 }
