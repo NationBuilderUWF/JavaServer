@@ -8,4 +8,5 @@ import java.io.Serializable;
 public class LoginRes implements Serializable {
     public boolean admin;
     public boolean success;
+    public int nation;
 }

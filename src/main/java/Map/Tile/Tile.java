@@ -3,9 +3,10 @@ import Map.Map;
 import Map.Nation;
 import MapRender.SelectData;
 
-public class Tile {
+import java.io.Serializable;
 
-    private Map map;
+public class Tile implements Serializable{
+
     private Nation owner; //nation which owns tile
     private boolean darkFlag; //flag for dark zone tiles, which allow pvp
     private boolean defendFlag; //flag for defending against attack
@@ -43,9 +44,9 @@ public class Tile {
         this.attacker = attacker;
     }
 
-    public void declareBattle(Nation attacker, int cost){
+    public void declareBattle(Map map, Nation attacker, int cost){
         Tile defender = map.getTile((int)SelectData.row, (int)SelectData.col);
-        int adjacent = checkAdjacency(attacker);
+        int adjacent = checkAdjacency(map, attacker);
         if(adjacent != 1){
             if(adjacent == 2){
                 //displayError("tileAlreadyOwned");
@@ -85,9 +86,9 @@ public class Tile {
         defender.setDefendFlag(false);
     }
 
-    public void buyTile(Nation buyer, int cost){
+    public void buyTile(Map map, Nation buyer, int cost){
         Tile product = map.getTile((int)SelectData.row,(int)SelectData.col); //retrieve desired tile
-        int adjacent = checkAdjacency(buyer);
+        int adjacent = checkAdjacency(map, buyer);
         if(adjacent != 1){
             if(adjacent == 2){
                 //displayError("tileAlreadyOwned");
@@ -113,7 +114,7 @@ public class Tile {
         }
     }
 
-    public int checkAdjacency(Nation myNation){
+    public int checkAdjacency(Map map, Nation myNation){
         if(map.getTile((int)SelectData.row, (int)SelectData.col).getOwner() == myNation)return 2;
         //^returns if tile of interest is already owned
         try {
@@ -159,12 +160,18 @@ public class Tile {
         return 0;//no tiles adjacent
     }
 
-    public Tile(Map map, Nation owner, boolean darkFlag, boolean defendFlag, Nation attacker){
-        this.map = map;
+    public Tile(){
         this.owner = null;
         this.darkFlag = false;
         this.defendFlag = false;
         this.attacker = null;
+    }
+
+    public Tile(Nation owner, boolean darkFlag, boolean defendFlag, Nation attacker){
+        this.owner = owner;
+        this.darkFlag = darkFlag;
+        this.defendFlag = defendFlag;
+        this.attacker = attacker;
     }
 
 }

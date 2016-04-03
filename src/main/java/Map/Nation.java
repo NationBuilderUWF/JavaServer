@@ -4,6 +4,7 @@ public class Nation {
 
     private int ID;
     private int resources;
+    private boolean inBattle;
 
     public int getID(){
         return ID;
@@ -21,9 +22,18 @@ public class Nation {
         this.resources = resources;
     }
 
-    public Nation(int ID, int resources){
-        this.ID = -1;
-        this.resources = 0;
+    public boolean isInBattle(){
+        return inBattle;
+    }
+
+    public void setInBattle(boolean inBattle){
+        this.inBattle = inBattle;
+    }
+
+    public Nation(int ID, int resources, boolean inBattle){
+        this.ID = ID;
+        this.resources = resources;
+        this.inBattle = inBattle;
     }
 
 }

@@ -7,4 +7,5 @@ public class Login {
     public String username;
     public String password;
     public boolean admin;
+    public int nation;
 }

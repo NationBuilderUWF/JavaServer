@@ -9,7 +9,6 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
@@ -46,9 +45,10 @@ public class LoginHelper {
                 if (login.password.equals(((LoginReq) o).password)) {
                     System.out.println("entered the if !!");
 
-                    //System.out.println(new Gson().fromJson(_doc.toJson(),Login.class));
+
                     response.admin = login.admin;
                     response.success = true;
+                    response.nation = login.nation;
                     System.out.println("Sending Login Success");
                     os.writeObject(response);
                 }

@@ -3,6 +3,7 @@ package com.company;
 import WebUtilities.GetMapReq;
 import WebUtilities.LoginReq;
 import WebUtilities.LoginRes;
+import WebUtilities.SetMapReq;
 
 import java.io.*;
 import java.net.*;
@@ -79,7 +80,9 @@ public class Main {
                     } else if(o instanceof GetMapReq){
                         System.out.println("Using GetMapHelper");
                         MapHelper.getMapReq(socket,o,os);
-
+                    }else if(o instanceof SetMapReq){
+                        System.out.println("Using SetMap");
+                        MapHelper.setMapReq(socket,o,os);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();

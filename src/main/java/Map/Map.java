@@ -1,14 +1,16 @@
 package Map;
 import Map.Tile.Tile;
 
-public class Map{
+import java.io.Serializable;
+
+public class Map implements Serializable{
 
     public Tile[][] tiles;
     public String _id;
-
     public Map(){
         this.tiles = new Tile[11][12];
-        populateDarkZone();
+        System.out.println("HEr");
+        //populateDarkZone();
     }
 
     public void populateDarkZone(){

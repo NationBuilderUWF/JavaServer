@@ -1,7 +1,7 @@
 package com.company;
 
 
-import Map.Map;
+import WebUtilities.GetMapRes;
 import WebUtilities.SetMapReq;
 import com.google.gson.Gson;
 import com.mongodb.MongoClient;
@@ -13,8 +13,6 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
-import static com.mongodb.client.model.Filters.eq;
-
 /**
  * Created by bjc90_000 on 4/2/2016.
  */
@@ -25,8 +23,11 @@ public class MapHelper {
         MongoCollection<Document> collection = database.getCollection("map");
         System.out.println("Get Map Req!");
         Document gameMap = collection.find().first();
+        System.out.println(gameMap);
+        GetMapRes object = new Gson().fromJson(gameMap.toJson(), GetMapRes.class);
+        System.out.println(object);
         try {
-            os.writeObject(new Gson().fromJson(gameMap.toJson(), Map.class));
+            os.writeObject(object);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -36,12 +37,22 @@ public class MapHelper {
         MongoClient mongoClient = new MongoClient("localhost");
         MongoDatabase database = mongoClient.getDatabase("CF");
         MongoCollection<Document> collection = database.getCollection("map");
+
+
+
+
+
+
         System.out.println("Set Map Req");
+        System.out.println(o);
         SetMapReq smr=(SetMapReq)o;
-        Map newMap = (Map) smr.map;
+        System.out.println(smr.maps);
 //        String newMapJSON = new Gson().toJson(newMap).toString();
 //        BSONObject dbObject = (BSONObject) JSON.parse(newMapJSON);
-        collection.updateOne(eq("_id",((SetMapReq) o).map._id),new Document("$set",new Document("tiles",newMap.tiles)));
+        Document doc = new Document("tiles",smr.maps).append("banks",smr.banks);
+        System.out.println(doc);
+        collection.insertOne(doc);
+        //collection.updateOne(eq("_id",((SetMapReq) o).map._id),new Document("$set",new Document("tiles",newMap.tiles)));
 
     }
 }
